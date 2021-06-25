@@ -1,5 +1,7 @@
 package com.appselect.junior.di
 
+import com.appselect.junior.network.Client
+import com.appselect.junior.network.service.ReviewService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -30,6 +32,18 @@ object NetworkModule {
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideReviewService(retrofit: Retrofit): ReviewService{
+        return retrofit.create(ReviewService::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideClient(reviewService: ReviewService): Client{
+        return Client(reviewService)
     }
 
 
