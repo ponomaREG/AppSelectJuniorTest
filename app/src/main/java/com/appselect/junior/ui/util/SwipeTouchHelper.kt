@@ -1,6 +1,7 @@
 package com.appselect.junior.ui.util
 
 import android.graphics.Canvas
+import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
@@ -42,6 +43,13 @@ class SwipeTouchHelper: ItemTouchHelper.Callback() {
         isCurrentlyActive: Boolean
     ) {
         val foreground: View = (viewHolder as MovieAdapter.Holder).binding.root.findViewById(R.id.foreground)
+        val background: View = (viewHolder).binding.root.findViewById(R.id.background)
+        val width = background.width
+        val coefOfOpen = dX / width
+        if(coefOfOpen <= 0.7){
+            background.alpha = coefOfOpen/0.7f
+        }
+        if(coefOfOpen == 0.0f) background.alpha = 1.0f
         getDefaultUIUtil().onDraw(c, recyclerView, foreground,
                 (dX/1.15).toFloat(), dY, actionState, isCurrentlyActive)
     }
