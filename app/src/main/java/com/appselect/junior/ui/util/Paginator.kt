@@ -9,7 +9,7 @@ class Paginator constructor(
         private val onLoadMoreItem: (Int) -> Unit,
         private val isLoading: () -> Boolean
 ): RecyclerView.OnScrollListener() {
-    private val threshold = 20
+    private val threshold = 5
     private var currentPage = 0
 
     init {

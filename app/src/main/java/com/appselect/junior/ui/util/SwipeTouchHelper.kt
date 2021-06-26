@@ -68,7 +68,6 @@ class SwipeTouchHelper: ItemTouchHelper.Callback() {
     }
 
     override fun getSwipeThreshold(viewHolder: RecyclerView.ViewHolder): Float {
-        return 0.8f
+        return 0.3f
     }
-
 }

@@ -2,6 +2,8 @@
 <layout>
 <Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     android:contentInsetStart="0dp"
+    android:elevation="3dp"
+    android:background="@color/toolBarBackground"
     android:layout_width="match_parent" android:layout_height="50dp">
     <RelativeLayout
         android:layout_width="match_parent"

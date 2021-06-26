@@ -9,4 +9,20 @@
     <color name="white">#FFFFFFFF</color>
     <color name="light_gray">#818181</color>
     <color name="dark_gray">#4E4D4D</color>
+
+    <color name="textColorPrimary">#000000</color>
+    <color name="textColorSecondary">#818181</color>
+    <color name="textColorDescTitle">#4E4D4D</color>
+
+    <color name="background">#FFFFFF</color>
+    <color name="itemMovieTopBackground">#FFFFFF</color>
+    <color name="itemMovieBottomBackground">#FAF8F8</color>
+    <color name="toolBarBackground">#FFFFFF</color>
+
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryVariant">#5E5E5E</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorSecondary">#000000</color>
+    <color name="colorSecondaryVariant">#000000</color>
+    <color name="colorOnSecondary">#000000</color>
 </resources>
