@@ -2,6 +2,8 @@ package com.appselect.junior.network
 
 import com.appselect.junior.model.Response
 import com.appselect.junior.network.service.ReviewService
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 class Client @Inject constructor(
@@ -14,7 +16,14 @@ class Client @Inject constructor(
         onSuccess:(Response) -> Unit
     ){
         reviewService.getMovies(
-            page = page
+            offset = page * 20
         )
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeOn(Schedulers.io())
+            .subscribe(
+                onSuccess,
+                {onError(it.message.toString())},
+                onComplete
+            )
     }
 }
