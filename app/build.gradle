@@ -68,4 +68,6 @@ dependencies {
     //LiveData
     implementation "androidx.activity:activity-ktx:1.2.3"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.1"
+    //Rx
+    implementation "io.reactivex.rxjava2:rxandroid:2.0.1"
 }
