@@ -13,6 +13,8 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.Holder>() {
 
     private val _items: MutableList<Movie> = mutableListOf()
 
+    private var onClearListener: OnClearListener? = null
+
 
     fun addItems(items: List<Movie>) {
         val positionStart = _items.size
@@ -23,6 +25,7 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.Holder>() {
     fun clearAll() {
         _items.clear()
         notifyDataSetChanged()
+        onClearListener?.onClear()
     }
 
 
@@ -47,5 +50,13 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.Holder>() {
     }
 
     override fun getItemCount(): Int = _items.size
+
+    abstract class OnClearListener{
+        abstract fun onClear()
+    }
+
+    fun setOnClearListener(listener: OnClearListener){
+        onClearListener = listener
+    }
 
 }

@@ -23,6 +23,7 @@
         android:layout_height="match_parent">
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv"
+            paginator="@{vm}"
             adapter="@{adapter}"
             moviesList="@{vm.movies}"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"

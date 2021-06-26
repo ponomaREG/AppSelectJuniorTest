@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import com.appselect.junior.model.Movie
 import com.appselect.junior.ui.adapter.MovieAdapter
+import com.appselect.junior.ui.main.MainViewModel
+import com.appselect.junior.ui.util.Paginator
 
 @BindingAdapter("adapter")
 fun bindAdapter(view: RecyclerView, adapter:RecyclerView.Adapter<*>){
@@ -21,4 +23,13 @@ fun bindMoviesList(view: RecyclerView, movies: List<Movie>?){
 @BindingAdapter("divider")
 fun bindDivider(view: RecyclerView, dividerItemDecoration: RecyclerView.ItemDecoration){
     view.addItemDecoration(dividerItemDecoration)
+}
+
+@BindingAdapter("paginator")
+fun bindPaginator(view: RecyclerView, viewModel: MainViewModel){
+    Paginator(
+            recyclerView = view,
+            onLoadMoreItem = {viewModel.loadMovies(it)},
+            isLoading = {viewModel.isLoading.get()}
+    )
 }

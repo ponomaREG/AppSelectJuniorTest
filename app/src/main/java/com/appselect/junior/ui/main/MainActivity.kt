@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import com.appselect.junior.R
 import com.appselect.junior.databinding.ActivityMainBinding
 import com.appselect.junior.ui.adapter.MovieAdapter
+import com.appselect.junior.ui.util.Paginator
 import com.appselect.junior.ui.util.SwipeTouchHelper
 import dagger.hilt.android.AndroidEntryPoint
 
