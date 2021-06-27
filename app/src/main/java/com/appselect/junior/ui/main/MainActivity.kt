@@ -22,9 +22,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         val movieAdapter = MovieAdapter()
-        val swipeTouchHelperCallBack = SwipeTouchHelper()
-        val itemTouchHelper = ItemTouchHelper(swipeTouchHelperCallBack)
-        itemTouchHelper.attachToRecyclerView(binding.rv)
         binding.apply {
             lifecycleOwner = this@MainActivity
             vm = viewModel

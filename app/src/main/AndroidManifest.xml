@@ -11,6 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JuniorTest">
         <activity android:name=".ui.main.MainActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.JuniorTest.Launcher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

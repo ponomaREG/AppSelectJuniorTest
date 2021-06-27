@@ -1,7 +1,6 @@
 package com.appselect.junior.ui.util
 
 import android.graphics.Canvas
-import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
@@ -9,12 +8,21 @@ import com.appselect.junior.R
 import com.appselect.junior.ui.adapter.MovieAdapter
 
 class SwipeTouchHelper: ItemTouchHelper.Callback() {
+    enum class MODE{
+        LINEAR,
+        GRID
+    }
+    var currentMode: MODE = MODE.LINEAR
+
     override fun getMovementFlags(
         recyclerView: RecyclerView,
         viewHolder: RecyclerView.ViewHolder
     ): Int {
         val dragFlags = 0
-        val swipeFlags = ItemTouchHelper.END
+        val swipeFlags = if(currentMode == MODE.LINEAR) ItemTouchHelper.END
+        else{
+            if(viewHolder.adapterPosition % 2 == 0) ItemTouchHelper.START else ItemTouchHelper.END
+        }
         return makeMovementFlags(dragFlags, swipeFlags)
     }
 
@@ -45,13 +53,14 @@ class SwipeTouchHelper: ItemTouchHelper.Callback() {
         val foreground: View = (viewHolder as MovieAdapter.Holder).binding.root.findViewById(R.id.foreground)
         val background: View = (viewHolder).binding.root.findViewById(R.id.background)
         val width = background.width
-        val coefOfOpen = dX / width
+        val coefOfOpen = kotlin.math.abs(dX / width)
         if(coefOfOpen <= 0.7){
             background.alpha = coefOfOpen/0.7f
         }
         if(coefOfOpen == 0.0f) background.alpha = 1.0f
+        val dxDivider = if(currentMode == MODE.LINEAR) 1.15 else 1.3
         getDefaultUIUtil().onDraw(c, recyclerView, foreground,
-                (dX/1.15).toFloat(), dY, actionState, isCurrentlyActive)
+                (dX/dxDivider).toFloat(), dY, actionState, isCurrentlyActive)
     }
 
     override fun isItemViewSwipeEnabled(): Boolean {
@@ -68,6 +77,6 @@ class SwipeTouchHelper: ItemTouchHelper.Callback() {
     }
 
     override fun getSwipeThreshold(viewHolder: RecyclerView.ViewHolder): Float {
-        return 0.3f
+        return 1f
     }
 }

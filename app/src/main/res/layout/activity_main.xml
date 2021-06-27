@@ -28,6 +28,8 @@
             paginator="@{vm}"
             adapter="@{adapter}"
             moviesList="@{vm.movies}"
+            swipeTouchHelperEnabled="@{true}"
+            swipeTouchHelperGridMode="@{false}"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:spanCount="1"
             tools:listitem="@layout/item_movie"
