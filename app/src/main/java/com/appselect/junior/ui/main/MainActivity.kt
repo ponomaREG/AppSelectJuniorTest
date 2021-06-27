@@ -1,15 +1,12 @@
 package com.appselect.junior.ui.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.recyclerview.widget.ItemTouchHelper
 import com.appselect.junior.R
 import com.appselect.junior.databinding.ActivityMainBinding
 import com.appselect.junior.ui.adapter.MovieAdapter
-import com.appselect.junior.ui.util.Paginator
-import com.appselect.junior.ui.util.SwipeTouchHelper
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

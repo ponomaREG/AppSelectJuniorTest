@@ -1,0 +1,30 @@
+{
+  "status": "ok",
+  "copyright": "copyright",
+  "has_more": true,
+  "num_results": 20,
+  "results": [
+    {
+      "display_title": "Fight club",
+      "mpaa_rating": "1337",
+      "critics_pick": 123,
+      "byline": "byline",
+      "headline": "headline",
+      "summary_short": "summary_short",
+      "publication_date": "27.06",
+      "opening_date": "28.06",
+      "date_updated": "29.06",
+      "link": {
+        "type": "link",
+        "url": "test.com",
+        "suggested_link_text": "suggested"
+      },
+      "multimedia": {
+        "type": "photo",
+        "src": "test.com",
+        "height": 100,
+        "width": 200
+      }
+    }
+  ]
+}

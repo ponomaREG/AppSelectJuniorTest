@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.appselect.junior.ui.adapter.MovieAdapter
 
 class Paginator constructor(
-        private val recyclerView: RecyclerView,
+        recyclerView: RecyclerView,
         private val onLoadMoreItem: (Int) -> Unit,
         private val isLoading: () -> Boolean
 ): RecyclerView.OnScrollListener() {

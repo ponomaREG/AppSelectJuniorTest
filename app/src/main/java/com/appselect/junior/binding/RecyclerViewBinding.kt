@@ -1,6 +1,5 @@
 package com.appselect.junior.binding
 
-import android.util.Log
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
@@ -19,7 +18,6 @@ fun bindAdapter(view: RecyclerView, adapter:RecyclerView.Adapter<*>){
 fun bindMoviesList(view: RecyclerView, movies: List<Movie>?){
     if((view.adapter != null) and (view.adapter is MovieAdapter) and (movies.isNullOrEmpty().not())){
         (view.adapter as MovieAdapter).addItems(movies!!)
-        Log.e("movies", movies.toString())
     }
 }
 

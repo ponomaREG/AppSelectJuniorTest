@@ -1,6 +1,5 @@
 package com.appselect.junior.ui.main
 
-import android.util.Log
 import androidx.databinding.ObservableBoolean
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

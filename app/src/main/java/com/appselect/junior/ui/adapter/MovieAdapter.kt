@@ -1,4 +1,4 @@
-package com.appselect.junior.ui.adapter;
+package com.appselect.junior.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.appselect.junior.R
 import com.appselect.junior.databinding.ItemMovieBinding
-import com.appselect.junior.databinding.ItemMovieDescriptionBinding
 import com.appselect.junior.model.Movie
 
 class MovieAdapter : RecyclerView.Adapter<MovieAdapter.Holder>() {

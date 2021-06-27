@@ -1,9 +1,7 @@
 package com.appselect.junior.viewmodel
 
 import com.appselect.junior.common.RxImmediateSchedulerAbstract
-import com.appselect.junior.mock.mockMovieList
 import com.appselect.junior.mock.mockResponse
-import com.appselect.junior.model.Movie
 import com.appselect.junior.network.Client
 import com.appselect.junior.network.service.ReviewService
 import com.appselect.junior.repository.MainRepository

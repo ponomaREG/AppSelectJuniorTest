@@ -1,6 +1,5 @@
 package com.appselect.junior.binding
 
-import android.os.Message
 import android.view.View
 import android.widget.Toast
 import androidx.databinding.BindingAdapter
